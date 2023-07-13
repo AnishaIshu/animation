@@ -2,26 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* text underline animation */
+.hoverUnderline {
+  background-image:
+  linear-gradient(
+  to bottom,
+  transparent 0%,
+  transparent 90%,
+  #000 90%,
+  #000 100%);
+background-repeat: no-repeat;
+background-size: 0% 100%;
+background-position-x: right;
+transition: background-size 350ms;
+padding-bottom: 5px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.hoverUnderline:hover{
+  background-size: 100% 100%;
+  background-position-x: left;
+  opacity: 1;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.hoverUnderlineFlex {
+  background-image:
+  linear-gradient(
+  to bottom,
+  transparent 0%,
+  transparent 90%,
+  #fff 90%,
+  #fff 100%);
+background-repeat: no-repeat;
+background-size: 0% 100%;
+background-position-x: right;
+transition: background-size 350ms;
+padding-bottom: 5px;
+}
+
+.hoverUnderlineFlex:hover{
+  background-size: 100% 100%;
+  background-position-x: left;
+  opacity: 1;
+}
+
+
+
+/* heroBackground */
+.heroSection{ 
+    background-image: url("/images/heroSection/bgImg.jpg");
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: fill;
 }
